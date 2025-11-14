@@ -1,0 +1,16 @@
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    background-color:var(--primary-color);
+    align-items: center;
+    color:white;
+    padding: 10px;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 2rem;
+}
+

@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "TechCorp India",
+    "location": "Bangalore, Karnataka",
+    "description": "Responsible for implementing visual elements that users see and interact with in a web application.",
+    "requirements": [
+      "Proficiency in HTML, CSS, and JavaScript",
+      "Experience with React",
+      "Strong debugging skills"
+    ],
+    "education": "Bachelor's Degree in Computer Science or equivalent",
+    "salary": "₹6,00,000 - ₹9,00,000 per annum"
+  },
+  {
+    "id": 2,
+    "title": "Backend Developer",
+    "company": "CodeNation Solutions",
+    "location": "Hyderabad, Telangana",
+    "description": "Develop and maintain the server-side logic and APIs for web applications.",
+    "requirements": [
+      "Proficiency in Node.js",
+      "Experience with MongoDB or MySQL",
+      "Understanding of RESTful APIs"
+    ],
+    "education": "Bachelor's or Master's Degree in Computer Science or related field",
+    "salary": "₹7,00,000 - ₹12,00,000 per annum"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "company": "DesignWorld India",
+    "location": "Mumbai, Maharashtra",
+    "description": "Design user-centered experiences and interfaces for digital products.",
+    "requirements": [
+      "Proficiency in Figma or Adobe XD",
+      "Strong visual design skills",
+      "Experience with user research"
+    ],
+    "education": "Diploma or Degree in Design, Fine Arts, or related field",
+    "salary": "₹5,00,000 - ₹8,00,000 per annum"
+  },
+  {
+    "id": 4,
+    "title": "Data Scientist",
+    "company": "DataWorks Analytics",
+    "location": "Pune, Maharashtra",
+    "description": "Analyze and interpret complex data to help companies make better decisions.",
+    "requirements": [
+      "Strong programming skills in Python or R",
+      "Experience with machine learning",
+      "Knowledge of data visualization tools"
+    ],
+    "education": "Master's Degree in Data Science, Statistics, or related field",
+    "salary": "₹10,00,000 - ₹15,00,000 per annum"
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "company": "Cloudify Solutions",
+    "location": "Chennai, Tamil Nadu",
+    "description": "Responsible for managing deployment pipelines and automating infrastructure processes.",
+    "requirements": [
+      "Experience with Docker and Kubernetes",
+      "Knowledge of CI/CD pipelines",
+      "Familiarity with cloud platforms like AWS or Azure"
+    ],
+    "education": "Bachelor's Degree in Information Technology or related field",
+    "salary": "₹8,00,000 - ₹12,00,000 per annum"
+  },
+  {
+    "id": 6,
+    "title": "Mobile App Developer",
+    "company": "AppMasters India",
+    "location": "Delhi, NCR",
+    "description": "Develop and maintain mobile applications for iOS and Android platforms.",
+    "requirements": [
+      "Proficiency in Flutter or React Native",
+      "Experience with RESTful APIs",
+      "Strong problem-solving skills"
+    ],
+    "education": "Bachelor's Degree in Software Engineering or related field",
+    "salary": "₹7,00,000 - ₹10,00,000 per annum"
+  },
+  {
+    "id": 7,
+    "title": "Digital Marketing Specialist",
+    "company": "MarketGurus",
+    "location": "Ahmedabad, Gujarat",
+    "description": "Plan and execute digital marketing campaigns to enhance online presence.",
+    "requirements": [
+      "Experience in SEO and SEM",
+      "Proficiency in Google Ads and Analytics",
+      "Strong communication skills"
+    ],
+    "education": "Bachelor's Degree in Marketing, Business, or related field",
+    "salary": "₹4,00,000 - ₹7,00,000 per annum"
+  },
+  {
+    "id": 8,
+    "title": "Cloud Architect",
+    "company": "SkyTech Solutions",
+    "location": "Kolkata, West Bengal",
+    "description": "Design and manage cloud infrastructure for enterprise applications.",
+    "requirements": [
+      "Proficiency in AWS or Azure",
+      "Experience with virtualization",
+      "Knowledge of cloud security"
+    ],
+    "education": "Master's Degree in Computer Science or equivalent",
+    "salary": "₹12,00,000 - ₹18,00,000 per annum"
+  },
+  {
+    "id": 9,
+    "title": "AI/ML Engineer",
+    "company": "InnoTech AI",
+    "location": "Gurgaon, Haryana",
+    "description": "Develop and deploy machine learning models for various applications.",
+    "requirements": [
+      "Proficiency in Python, TensorFlow, or PyTorch",
+      "Strong understanding of algorithms",
+      "Experience with big data tools"
+    ],
+    "education": "Master's Degree in AI/ML, Data Science, or related field",
+    "salary": "₹15,00,000 - ₹25,00,000 per annum"
+  },
+  {
+    "id": 10,
+    "title": "System Administrator",
+    "company": "ITPro Solutions",
+    "location": "Lucknow, Uttar Pradesh",
+    "description": "Manage and maintain IT infrastructure, including servers and networks.",
+    "requirements": [
+      "Experience with Linux and Windows Server",
+      "Knowledge of networking protocols",
+      "Strong troubleshooting skills"
+    ],
+    "education": "Bachelor's Degree in Information Technology or related field",
+    "salary": "₹5,00,000 - ₹8,00,000 per annum"
+  }
+]

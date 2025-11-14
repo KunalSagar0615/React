@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Vijay Ghore",
+    "imgLink": "https://fastly.picsum.photos/id/173/300/300.jpg?hmac=sLKRQqyhqQXIpv5NR6LBNdazxQow4wMJwl570A5uwO0",
+    "mob": 9730809750,
+    "email": "vijayghore@gmail.com"
+  },
+  {
+    "id": 2,
+    "name": "Amit Sharma",
+    "imgLink": "https://fastly.picsum.photos/id/322/300/300.jpg?hmac=FrsRFha-oAbOD747L0E708L22Bzts0jIVNbiUFxrdd8",
+    "mob": 9823479123,
+    "email": "amit.sharma@example.com"
+  },
+  {
+    "id": 3,
+    "name": "Sneha Kulkarni",
+    "imgLink": "https://fastly.picsum.photos/id/573/300/300.jpg?hmac=eB8bNuMfnFGtyA4SdNvGHVw2bCJzRa2O8FabHr1sb40",
+    "mob": 9876543210,
+    "email": "sneha.kulkarni@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Rahul Patil",
+    "imgLink": "https://fastly.picsum.photos/id/503/300/300.jpg?hmac=yJZq1vESNpMjjHRh4fFo7Mvsc2ATwu3Pi1I8FhyUPCc",
+    "mob": 9923456789,
+    "email": "rahul.patil@example.com"
+  },
+  {
+    "id": 5,
+    "name": "Priya Mehta",
+    "imgLink": "https://fastly.picsum.photos/id/955/300/300.jpg?hmac=b_4KF2rcgCANzZzs37HTt-7WtQ3fxG_zOFI2JUPhOQw",
+    "mob": 9812345678,
+    "email": "priya.mehta@example.com"
+  },
+  {
+    "id": 6,
+    "name": "Rajesh Kumar",
+    "imgLink": "https://fastly.picsum.photos/id/858/300/300.jpg?hmac=_ejZ2a4fSroS4BO_gXXIxq7hyd0RIHSP290jgbqMO2c",
+    "mob": 9945671234,
+    "email": "rajesh.kumar@example.com"
+  },
+  {
+    "id": 7,
+    "name": "Anita Singh",
+    "imgLink": "https://fastly.picsum.photos/id/498/300/300.jpg?hmac=fOb4nBU8ScEq2lIGOiQyElvnNke8Gw_j_ZYGEZi4LMA",
+    "mob": 9998765432,
+    "email": "anita.singh@example.com"
+  },
+  {
+    "id": 8,
+    "name": "Rohit Verma",
+    "imgLink": "https://fastly.picsum.photos/id/864/300/300.jpg?hmac=vS7RjFd0kISq4skaH_DLn2J_I5p5i-Z3w5Eob_LwlAk",
+    "mob": 9876543120,
+    "email": "rohit.verma@example.com"
+  },
+  {
+    "id": 9,
+    "name": "Kiran Desai",
+    "imgLink": "https://fastly.picsum.photos/id/678/300/300.jpg?hmac=GPROD55lPhHCQgcOx7WsyIuDQ7tzz8sh-s_IvCxPwkw",
+    "mob": 9123456780,
+    "email": "kiran.desai@example.com"
+  },
+  {
+    "id": 10,
+    "name": "Neha Gupta",
+    "imgLink": "https://fastly.picsum.photos/id/652/300/300.jpg?hmac=WKkCaSCqwcDoWh5l7utyy5N2D_ADygxvzHHE7x1HZbQ",
+    "mob": 9987654321,
+    "email": "neha.gupta@example.com"
+  }
+]

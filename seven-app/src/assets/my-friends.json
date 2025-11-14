@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "name": "Ram",
+        "email": "ram@gmail.com",
+        "mobile": "9876543210",
+        "city": "Delhi",
+        "team": [
+            {"member": "Team Member 1"},
+            {"member": "Team Member 2"},
+            {"member": "Team Member 3"},
+            {"member": "Team Member 4"},
+            {"member": "Team Member 5"},
+            {"member": "Team Member 6"}
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Shyam",
+        "email": "shyam@gmail.com",
+        "mobile": "9876543211",
+        "city": "Mumbai"
+    },
+    {
+        "id": 3,
+        "name": "Mohan",
+        "email": "mohan@gmail.com",
+        "mobile": "9876543212",
+        "city": "Bangalore"
+    },
+    {
+        "id": 4,
+        "name": "Sohan",
+        "email": "sohan@gmail.com",
+        "mobile": "9876543213",
+        "city": "Chennai"
+    },
+    {
+        "id": 5,
+        "name": "Rohan",
+        "email": "rohan@gmail.com",
+        "mobile": "9876543214",
+        "city": "Kolkata"
+    },
+    {
+        "id": 6,
+        "name": "Amit",
+        "email": "amit@gmail.com",
+        "mobile": "9876543215",
+        "city": "Hyderabad"
+    },
+    {
+        "id": 7,
+        "name": "Vijay",
+        "email": "vijay@gmail.com",
+        "mobile": "9876543216",
+        "city": "Pune"
+    },
+    {
+        "id": 8,
+        "name": "Ajay",
+        "email": "ajay@gmail.com",
+        "mobile": "9876543217",
+        "city": "Ahmedabad"
+    },
+    {
+        "id": 9,
+        "name": "Suresh",
+        "email": "suresh@gmail.com",
+        "mobile": "9876543218",
+        "city": "Jaipur"
+    },
+    {
+        "id": 10,
+        "name": "Rakesh",
+        "email": "rakesh@gmail.com",
+        "mobile": "9876543219",
+        "city": "Lucknow"
+    }
+]
