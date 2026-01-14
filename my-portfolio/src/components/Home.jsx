@@ -1,4 +1,6 @@
 import React from "react";
+import profilePic from "../assets/all-certificates/identity.jpeg";
+
 
 const Home = () => {
   return (
@@ -26,10 +28,13 @@ const Home = () => {
       </div>
 
       <div className="mt-10 md:mt-0">
-        <img src="https://cdn-icons-png.flaticon.com/512/1053/1053244.png" alt="Profile" className="w-64 h-64 rounded-full border-4 border-blue-500 object-cover shadow-lg" />
+        <img
+          src={profilePic}
+          alt="Profile"
+          className="w-64 h-64 rounded-full border-4 border-blue-500 object-cover shadow-lg 
+                     animate-pulse hover:scale-105 transition-transform duration-500"
+        />
       </div>
-
-     
     </div>
   );
 };
