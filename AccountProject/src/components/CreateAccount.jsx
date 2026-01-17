@@ -4,16 +4,22 @@ import { use } from 'react'
 
 const CreateAccount = ({accountData,setAccountData}) => {
 
-  const [name, setName] = useState()
-  const [mobile, setMobile] = useState()
-  const [email, setEmail] = useState()
-  const [accountType, setAccountType] = useState()
-  const [initialBalance, setInitialBalance] = useState()
+  const [name, setName] = useState('')
+  const [mobile, setMobile] = useState('')
+  const [email, setEmail] = useState('')
+  const [accountType, setAccountType] = useState('')
+  const [initialBalance, setInitialBalance] = useState('')
 
   const handlesubmit=()=>{
     const newAccount={name,mobile,email,accountType,initialBalance}
     setAccountData([...accountData,newAccount]);
     console.log(newAccount);
+
+    setName('');
+    setMobile('');
+    setEmail('');
+    setAccountType('');
+    setInitialBalance('');  
   }
 
   return (
@@ -26,8 +32,8 @@ const CreateAccount = ({accountData,setAccountData}) => {
           <input className='border rounded w-full  h-10 p-2' type="text" placeholder='Enter email' onChange={(e)=>setEmail(e.target.value)} required/><br />
           <input className='border rounded w-full  h-10 p-2' type="text" placeholder='Enter initial balance' onChange={(e)=>setInitialBalance(e.target.value)} required/><br />
           <div className='flex justify-evenly items-center w-full  h-10 p-2'>
-            <label ><input type="radio" name="AccountType" value="Saving" id="" onClick={()=>setAccountType(e.target.value)} required/> Saving Account</label>
-            <label ><input type="radio" name="AccountType" value="Current" id="" onClick={()=>setAccountType(e.target.value)} required/> Current Account</label>
+            <label ><input type="radio" name="AccountType" value="Saving" id="" onClick={(e)=>setAccountType(e.target.value)} required/> Saving Account</label>
+            <label ><input type="radio" name="AccountType" value="Current" id="" onClick={(e)=>setAccountType(e.target.value)} required/> Current Account</label>
           </div>
           <button className='border rounded w-full h-10 p-2 cursor-pointer' type="button" onClick={handlesubmit}>Submit</button>
        
