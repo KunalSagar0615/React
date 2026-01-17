@@ -2,7 +2,7 @@ import React from 'react'
 
 const DisplayAllAccountDetails = ({accountData}) => {
   return (
-    <div>
+    <div className='p-5'>
       {
         accountData.length == 0 ? <p>No accounts to display</p> : (
           <table className='w-full border-collapse border border-black'>
