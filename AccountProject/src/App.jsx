@@ -9,6 +9,7 @@ import HomePage from './components/HomePage'
 import { useState } from 'react'
 function App() {
 const [accountData,setAccountData]=useState([]);
+
   return (
     
     <BrowserRouter>
@@ -16,8 +17,8 @@ const [accountData,setAccountData]=useState([]);
       <Routes>
         <Route path='/' element={<HomePage/>}/>
         <Route path='/create-account' element={<CreateAccount accountData={accountData} setAccountData={setAccountData}/>}/>
-        <Route path='/delete-account' element={<DeleteAccount/>}/>
-        <Route path='/update-account' element={<UpdateAccount/>}/>
+        <Route path='/delete-account' element={<DeleteAccount accountData={accountData} setAccountData={setAccountData}/>}/>
+        <Route path='/update-account' element={<UpdateAccount accountData={accountData} setAccountData={setAccountData}/>}/>
         <Route path='/display-accounts' element={<DisplayAllAccountDetails accountData={accountData} />}/>
       </Routes>
     </BrowserRouter>
