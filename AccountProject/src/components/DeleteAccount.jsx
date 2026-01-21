@@ -83,6 +83,7 @@ const DeleteAccount = ({ accountData, setAccountData }) => {
           <p><b className="text-gray-300">Email:</b> {foundAccount.email}</p>
           <p><b className="text-gray-300">Account Type:</b> {foundAccount.accountType}</p>
           <p><b className="text-gray-300">Balance:</b> {foundAccount.initialBalance}</p>
+          <p><b className="text-gray-300">Account Status:</b> {foundAccount.accountStatus}</p>
 
           <button
             onClick={handleDelete}

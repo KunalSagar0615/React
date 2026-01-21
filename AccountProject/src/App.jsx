@@ -11,6 +11,8 @@ import { useState } from 'react'
 import DepositAmount from './components/DepositAmount';
 import WithdrowAmount from './components/WithdrowAmount';
 function App() {
+const date = new Date();
+const todaysDate = date.toISOString().split("T")[0];
 const [accountData,setAccountData]=useState([]);
 const [limit,setLimit]=useState(50000);
 const [minBalance,setMinBalance]=useState(500);
@@ -21,8 +23,8 @@ const [minBalance,setMinBalance]=useState(500);
       <Navbar/>
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/create-account' element={<CreateAccount accountData={accountData} setAccountData={setAccountData} minBalance={minBalance} />}/>
-        <Route path='/close-account' element={<DeleteAccount accountData={accountData} setAccountData={setAccountData}/>}/>
+        <Route path='/create-account' element={<CreateAccount accountData={accountData} setAccountData={setAccountData} minBalance={minBalance} todaysDate={todaysDate}/>}/>
+        <Route path='/close-account' element={<DeleteAccount accountData={accountData} setAccountData={setAccountData} todaysDate={todaysDate}/>}/>
         <Route path='/update-account' element={<UpdateAccount accountData={accountData} setAccountData={setAccountData}/>}/>
         <Route path='/display-accounts' element={<DisplayAllAccountDetails accountData={accountData} />}/>
         <Route path='/deposit-amount' element={<DepositAmount accountData={accountData} setAccountData={setAccountData}/>}/>

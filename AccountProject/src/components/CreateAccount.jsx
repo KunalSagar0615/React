@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 
-const CreateAccount = ({ accountData, setAccountData, minBalance }) => {
+const CreateAccount = ({ accountData, setAccountData, minBalance, todaysDate }) => {
 
   const [name, setName] = useState('')
   const [mobile, setMobile] = useState('')
   const [email, setEmail] = useState('')
   const [accountType, setAccountType] = useState('')
   const [initialBalance, setInitialBalance] = useState('')
-  const [msg , setMsg] = useState('')
+  const [msg, setMsg] = useState('')
+
+
 
   const accountNumber = 10000000000 + accountData.length + 1
   const emailValidationRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/
@@ -47,8 +49,12 @@ const CreateAccount = ({ accountData, setAccountData, minBalance }) => {
       mobile,
       email,
       accountType,
-      initialBalance
-    }
+      initialBalance: Number(initialBalance),
+      accountStatus: "Active",
+      createdDate: todaysDate,
+      closedDate: null
+    };
+
 
     setAccountData([...accountData, newAccount])
 
@@ -114,7 +120,7 @@ const CreateAccount = ({ accountData, setAccountData, minBalance }) => {
         <div className="text-red-500">{msg}</div>
 
         {/* Account Type */}
-        <div className="flex justify-between items-center gap-4 text-sm sm:text-base">
+        <div className="flex justify-evenly items-center gap-4 text-sm sm:text-base">
           <label className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
             <input
               type="radio"

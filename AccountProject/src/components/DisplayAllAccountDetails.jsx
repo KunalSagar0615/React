@@ -1,39 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 const DisplayAllAccountDetails = ({ accountData }) => {
-
   const [acData, setAcData] = useState([]);
-  const [acNo, setAcNo] = useState('');
+  const [acNo, setAcNo] = useState("");
 
   useEffect(() => {
     setAcData(accountData);
   }, [accountData]);
 
   const handleSearchClick = () => {
-
-    if (!/^\d+$/.test(acNo)) {
-      alert("Account number should contain only digits !!");
+    if (!acNo) {
+      alert("Please enter account number first !!");
       return;
     }
-    else if (acNo.length === 0) {
-      alert("Please enter account number first !!")
+
+    if (!/^\d{11}$/.test(acNo)) {
+      alert("Account number must be exactly 11 digits !!");
+      return;
     }
-    else if (acNo.length !== 11) {
-      alert("Account number should be 11 digits long !!");
+
+    const filteredData = accountData.filter(
+      (acc) => acc.accountNumber === Number(acNo)
+    );
+
+    if (filteredData.length === 0) {
+      alert("No account found with this account number !!");
+      return;
     }
-    else {
-      const filteredData = accountData.filter(
-        (x) => x.accountNumber === Number(acNo)
-      );
-      if (filteredData.length === 0) {
-        alert("No account found with this account number !!");
-      }
-      else {
-        setAcData(filteredData);
-      }
-    }
-  }
+
+    setAcData(filteredData);
+  };
+
+  const handleReset = () => {
+    setAcNo("");
+    setAcData(accountData);
+  };
 
   return (
     <div className="px-4 py-6 w-full flex flex-col items-center bg-gray-900 min-h-screen text-gray-100">
@@ -41,17 +43,24 @@ const DisplayAllAccountDetails = ({ accountData }) => {
       {/* Search */}
       <div className="rounded border border-gray-700 bg-gray-800 
                       w-full sm:w-3/4 md:w-1/3 
-                      flex justify-between items-center p-2 mb-4">
+                      flex justify-between items-center p-2 mb-4 gap-2">
         <input
           type="text"
           className="bg-transparent outline-none w-full text-gray-100 placeholder-gray-400"
           placeholder="Enter Account Number"
+          value={acNo}
           onChange={(e) => setAcNo(e.target.value)}
         />
         <FaSearch
           className="cursor-pointer text-blue-400 hover:text-blue-500 transition"
           onClick={handleSearchClick}
         />
+        <button
+          onClick={handleReset}
+          className="text-sm bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded"
+        >
+          Reset
+        </button>
       </div>
 
       {/* Table / No Data */}
@@ -62,12 +71,15 @@ const DisplayAllAccountDetails = ({ accountData }) => {
           <table className="w-full border-collapse border border-gray-700 text-sm sm:text-base">
             <thead className="bg-gray-800">
               <tr>
-                <th className="border border-gray-700 p-2">Account Number</th>
+                <th className="border border-gray-700 p-2">Account No</th>
                 <th className="border border-gray-700 p-2">Name</th>
                 <th className="border border-gray-700 p-2">Mobile</th>
                 <th className="border border-gray-700 p-2">Email</th>
-                <th className="border border-gray-700 p-2">Account Type</th>
-                <th className="border border-gray-700 p-2">Initial Balance</th>
+                <th className="border border-gray-700 p-2">Type</th>
+                <th className="border border-gray-700 p-2">Balance</th>
+                <th className="border border-gray-700 p-2">Status</th>
+                <th className="border border-gray-700 p-2">Created Date</th>
+                <th className="border border-gray-700 p-2">Closed Date</th>
               </tr>
             </thead>
 
@@ -83,15 +95,31 @@ const DisplayAllAccountDetails = ({ accountData }) => {
                   <td className="border border-gray-700 p-2">{acc.email}</td>
                   <td className="border border-gray-700 p-2">{acc.accountType}</td>
                   <td className="border border-gray-700 p-2">{acc.initialBalance}</td>
+                  <td className="border border-gray-700 p-2">
+                    <span
+                      className={
+                        acc.accountStatus === "Active"
+                          ? "text-green-400"
+                          : "text-red-400"
+                      }
+                    >
+                      {acc.accountStatus}
+                    </span>
+                  </td>
+                  <td className="border border-gray-700 p-2">
+                    {acc.createdDate}
+                  </td>
+                  <td className="border border-gray-700 p-2">
+                    {acc.closedDate ?? "—"}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       )}
-
     </div>
-  )
-}
+  );
+};
 
-export default DisplayAllAccountDetails
+export default DisplayAllAccountDetails;
