@@ -3,11 +3,11 @@ import BankImge from "../assets/KSLogo.jpeg"
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-gray-900 text-gray-100 px-4 text-center ">
+    <div className="static min-h-screen w-full flex flex-col justify-center items-center bg-gray-900 text-gray-100 px-4 text-center ">
 
       {/* Floating Logo */}
-      <div className="mb-6 animate-float hover:scale-110 transition-transform duration-300 ">
-        <img src={BankImge} alt="KeyStone Bank Logo" className=" w-28 h-28 sm:w-36 sm:h-36 rounded-xl border-2 border-blue-500 shadow-lg shadow-blue-500/20"/>
+      <div className="mb-6 mt-10 animate-float hover:scale-110 transition-transform duration-300 ">
+        <img src={BankImge} alt="KeyStone Bank Logo" className="w-28 h-28 sm:w-36 sm:h-36 rounded-xl border-2 border-blue-500 shadow-lg shadow-blue-500/20"/>
       </div>
 
 

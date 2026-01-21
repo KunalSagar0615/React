@@ -11,7 +11,7 @@ const Navbar = () => {
      ${isActive ? "text-blue-400" : "text-gray-300 hover:text-blue-400"}`;
 
   return (
-    <nav className="relative w-full bg-gray-900 shadow-md">
+    <nav className="fixed w-full bg-gray-900 shadow-md ">
 
       {/* TOP BAR */}
       <div className="flex justify-between items-center px-4 py-3">
