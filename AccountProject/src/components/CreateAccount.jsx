@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
-const CreateAccount = ({ accountData, setAccountData }) => {
+const CreateAccount = ({ accountData, setAccountData, minBalance }) => {
 
   const [name, setName] = useState('')
   const [mobile, setMobile] = useState('')
   const [email, setEmail] = useState('')
   const [accountType, setAccountType] = useState('')
   const [initialBalance, setInitialBalance] = useState('')
+  const [msg , setMsg] = useState('')
 
   const accountNumber = 10000000000 + accountData.length + 1
   const emailValidationRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/
@@ -35,6 +36,11 @@ const CreateAccount = ({ accountData, setAccountData }) => {
       return;
     }
 
+    if (Number(initialBalance) < minBalance) {
+      setMsg("Initial balance must be at least " + minBalance + "rs.");
+      return;
+    }
+
     const newAccount = {
       accountNumber,
       name,
@@ -51,6 +57,7 @@ const CreateAccount = ({ accountData, setAccountData }) => {
     setEmail('')
     setAccountType('')
     setInitialBalance('')
+    setMsg('')
   }
 
   return (
@@ -104,6 +111,7 @@ const CreateAccount = ({ accountData, setAccountData }) => {
           onChange={(e) => setInitialBalance(e.target.value)}
           required
         />
+        <div className="text-red-500">{msg}</div>
 
         {/* Account Type */}
         <div className="flex justify-between items-center gap-4 text-sm sm:text-base">

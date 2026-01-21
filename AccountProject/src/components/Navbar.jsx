@@ -11,7 +11,7 @@ const Navbar = () => {
      ${isActive ? "text-blue-400" : "text-gray-300 hover:text-blue-400"}`;
 
   return (
-    <nav className="fixed w-full bg-gray-900 shadow-md ">
+    <nav className="relative w-full bg-gray-900 shadow-md ">
 
       {/* TOP BAR */}
       <div className="flex justify-between items-center px-4 py-3">
@@ -36,7 +36,9 @@ const Navbar = () => {
         <ul className="hidden md:flex gap-6 text-base font-semibold">
           <li><NavLink to="/" className={linkClass}>Home</NavLink></li>
           <li><NavLink to="/create-account" className={linkClass}>Create Account</NavLink></li>
-          <li><NavLink to="/delete-account" className={linkClass}>Delete Account</NavLink></li>
+          <li><NavLink to="/close-account" className={linkClass}>Close Account</NavLink></li>
+          <li><NavLink to="/deposit-amount" className={linkClass}>Deposit Amount</NavLink></li>
+          <li><NavLink to="/withdraw-amount" className={linkClass}>Withdraw Amount</NavLink></li>
           <li><NavLink to="/update-account" className={linkClass}>Update Account</NavLink></li>
           <li><NavLink to="/display-accounts" className={linkClass}>Display All Accounts</NavLink></li>
         </ul>
@@ -52,7 +54,13 @@ const Navbar = () => {
             <NavLink to="/create-account" className={linkClass} onClick={() => setOpen(false)}>Create Account</NavLink>
           </li>
           <li className="py-2 border-b border-gray-700">
-            <NavLink to="/delete-account" className={linkClass} onClick={() => setOpen(false)}>Delete Account</NavLink>
+            <NavLink to="/close-account" className={linkClass} onClick={() => setOpen(false)}>Close Account</NavLink>
+          </li>
+          <li className="py-2 border-b border-gray-700">
+            <NavLink to="/deposit-amount" className={linkClass} onClick={() => setOpen(false)}>Deposit Amount</NavLink>
+          </li>
+          <li className="py-2 border-b border-gray-700">
+            <NavLink to="/withdraw-amount" className={linkClass} onClick={() => setOpen(false)}>Withdraw Amount</NavLink>
           </li>
           <li className="py-2 border-b border-gray-700">
             <NavLink to="/update-account" className={linkClass} onClick={() => setOpen(false)}>Update Account</NavLink>

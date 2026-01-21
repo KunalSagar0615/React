@@ -4,7 +4,9 @@ import { FaSearch } from "react-icons/fa";
 const UpdateAccount = ({ accountData, setAccountData }) => {
 
   const [acNo, setAcNo] = useState('');
+  
   const [accountIndex, setAccountIndex] = useState(null);
+
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -113,14 +115,7 @@ const UpdateAccount = ({ accountData, setAccountData }) => {
             <option value="Current">Current</option>
           </select>
 
-          <input
-            name="initialBalance"
-            value={formData.initialBalance}
-            onChange={handleChange}
-            placeholder="Balance"
-            className="w-full bg-gray-900 border border-gray-700 p-2 rounded
-                       outline-none focus:border-blue-400 hover:border-blue-500 transition"
-          />
+          {/* Can't update account balance */}
 
           <button
             className="bg-blue-600 hover:bg-blue-700 transition
