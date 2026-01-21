@@ -9,6 +9,8 @@ const DisplayAllAccountDetails = ({ accountData }) => {
     setAcData(accountData);
   }, [accountData]);
 
+  /* -------------------- Handlers -------------------- */
+
   const handleSearchClick = () => {
     if (!acNo) {
       alert("Please enter account number first !!");
@@ -37,65 +39,104 @@ const DisplayAllAccountDetails = ({ accountData }) => {
     setAcData(accountData);
   };
 
-  return (
-    <div className="px-4 py-6 w-full flex flex-col items-center bg-gray-900 min-h-screen text-gray-100">
+  const handleSelect = (e) => {
+    const status = e.target.value;
 
-      {/* Search */}
-      <div className="rounded border border-gray-700 bg-gray-800 
-                      w-full sm:w-3/4 md:w-1/3 
-                      flex justify-between items-center p-2 mb-4 gap-2">
-        <input
-          type="text"
-          className="bg-transparent outline-none w-full text-gray-100 placeholder-gray-400"
-          placeholder="Enter Account Number"
-          value={acNo}
-          onChange={(e) => setAcNo(e.target.value)}
-        />
-        <FaSearch
-          className="cursor-pointer text-blue-400 hover:text-blue-500 transition"
-          onClick={handleSearchClick}
-        />
-        <button
-          onClick={handleReset}
-          className="text-sm bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded"
+    if (status === "All") {
+      setAcData(accountData);
+    } else {
+      const filteredData = accountData.filter(
+        (acc) => acc.accountStatus === status
+      );
+      setAcData(filteredData);
+    }
+  };
+
+  /* -------------------- UI -------------------- */
+
+  return (
+    <div className="px-4 py-6 w-full min-h-screen flex flex-col items-center bg-gray-900 text-gray-100">
+      
+      {/* Search & Filter */}
+      <div className="flex w-full justify-evenly gap-4 flex-wrap">
+
+        {/* Search Box */}
+        <div className="w-full sm:w-3/4 md:w-1/3 mb-4 p-2 flex items-center gap-2 
+                        bg-gray-800 border border-gray-700 rounded">
+          <input
+            type="text"
+            placeholder="Enter Account Number"
+            value={acNo}
+            onChange={(e) => setAcNo(e.target.value)}
+            className="w-full bg-transparent outline-none text-gray-100 placeholder-gray-400"
+          />
+
+          <FaSearch
+            onClick={handleSearchClick}
+            className="cursor-pointer text-blue-400 hover:text-blue-500 transition"
+          />
+
+          <button
+            onClick={handleReset}
+            className="px-2 py-1 text-sm rounded bg-gray-700 hover:bg-gray-600"
+          >
+            Reset
+          </button>
+        </div>
+
+        {/* Status Filter */}
+        <select
+          onChange={handleSelect}
+          className="bg-gray-800 border border-gray-700 rounded px-3 py-2 h-fit"
         >
-          Reset
-        </button>
+          <option value="All">All Accounts</option>
+          <option value="Active">Active Accounts</option>
+          <option value="InActive">Closed Accounts</option>
+        </select>
       </div>
 
       {/* Table / No Data */}
       {acData.length === 0 ? (
-        <p className="text-gray-400 mt-4">No accounts to display</p>
+        <p className="mt-4 text-gray-400">No accounts to display</p>
       ) : (
         <div className="w-full overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-700 text-sm sm:text-base">
+          <table className="w-full text-sm sm:text-base border border-gray-700 border-collapse">
             <thead className="bg-gray-800">
               <tr>
-                <th className="border border-gray-700 p-2">Account No</th>
-                <th className="border border-gray-700 p-2">Name</th>
-                <th className="border border-gray-700 p-2">Mobile</th>
-                <th className="border border-gray-700 p-2">Email</th>
-                <th className="border border-gray-700 p-2">Type</th>
-                <th className="border border-gray-700 p-2">Balance</th>
-                <th className="border border-gray-700 p-2">Status</th>
-                <th className="border border-gray-700 p-2">Created Date</th>
-                <th className="border border-gray-700 p-2">Closed Date</th>
+                {[
+                  "Account No",
+                  "Name",
+                  "Mobile",
+                  "Email",
+                  "Type",
+                  "Balance",
+                  "Status",
+                  "Created Date",
+                  "Closed Date",
+                ].map((heading) => (
+                  <th
+                    key={heading}
+                    className="p-2 border border-gray-700"
+                  >
+                    {heading}
+                  </th>
+                ))}
               </tr>
             </thead>
 
             <tbody>
-              {acData.map((acc, index) => (
+              {acData.map((acc) => (
                 <tr
-                  key={index}
+                  key={acc.accountNumber}
                   className="hover:bg-gray-800 transition"
                 >
-                  <td className="border border-gray-700 p-2">{acc.accountNumber}</td>
-                  <td className="border border-gray-700 p-2">{acc.name}</td>
-                  <td className="border border-gray-700 p-2">{acc.mobile}</td>
-                  <td className="border border-gray-700 p-2">{acc.email}</td>
-                  <td className="border border-gray-700 p-2">{acc.accountType}</td>
-                  <td className="border border-gray-700 p-2">{acc.initialBalance}</td>
-                  <td className="border border-gray-700 p-2">
+                  <td className="p-2 border border-gray-700">{acc.accountNumber}</td>
+                  <td className="p-2 border border-gray-700">{acc.name}</td>
+                  <td className="p-2 border border-gray-700">{acc.mobile}</td>
+                  <td className="p-2 border border-gray-700">{acc.email}</td>
+                  <td className="p-2 border border-gray-700">{acc.accountType}</td>
+                  <td className="p-2 border border-gray-700">{acc.initialBalance}</td>
+                  <td className="p-2 border border-gray-700">
                     <span
                       className={
                         acc.accountStatus === "Active"
@@ -106,11 +147,11 @@ const DisplayAllAccountDetails = ({ accountData }) => {
                       {acc.accountStatus}
                     </span>
                   </td>
-                  <td className="border border-gray-700 p-2">
+                  <td className="p-2 border border-gray-700">
                     {acc.createdDate}
                   </td>
-                  <td className="border border-gray-700 p-2">
-                    {acc.closedDate ?? "—"}
+                  <td className="p-2 border border-gray-700">
+                    {acc.closedDate || "—"}
                   </td>
                 </tr>
               ))}
