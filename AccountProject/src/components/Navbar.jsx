@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaBars } from "react-icons/fa6";
 import logo from "../assets/KSLogo.jpeg"
+import { MdOutlineSettings } from "react-icons/md";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -42,6 +43,11 @@ const Navbar = () => {
           <li><NavLink to="/update-account" className={linkClass}>Update Account</NavLink></li>
           <li><NavLink to="/display-accounts" className={linkClass}>Display All Accounts</NavLink></li>
         </ul>
+
+        <div className="text-4xl sm:text-5xl font-extrabold tracking-wide text-blue-400 mb-3">
+          <NavLink to="/settings" className={linkClass}><MdOutlineSettings /></NavLink>
+        </div>
+
       </div>
 
       {/* Mobile Menu */}

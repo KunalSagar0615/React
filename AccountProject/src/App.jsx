@@ -10,13 +10,29 @@ import HomePage from './components/HomePage'
 import { useState } from 'react'
 import DepositAmount from './components/DepositAmount';
 import WithdrowAmount from './components/WithdrowAmount';
+import Settings from './components/Settings';
+import Login from './components/Login';
+import Signup from './components/Signup';
 function App() {
 const date = new Date();
 const todaysDate = date.toISOString().split("T")[0];
 const [accountData,setAccountData]=useState([]);
 const [limit,setLimit]=useState(50000);
 const [minBalance,setMinBalance]=useState(500);
+const [isAuthenticated, setIsAuthenticated] = useState(false);
+const [showSignup, setShowSignup] = useState(false);
 
+  //  NOT LOGGED IN
+  if (!isAuthenticated) {
+    return showSignup ? (
+      <Signup goToLogin={() => setShowSignup(false)} />
+    ) : (
+      <Login
+        onLogin={() => setIsAuthenticated(true)}
+        goToSignup={() => setShowSignup(true)}
+      />
+    );
+  }
   return (
     
     <BrowserRouter>
@@ -29,6 +45,7 @@ const [minBalance,setMinBalance]=useState(500);
         <Route path='/display-accounts' element={<DisplayAllAccountDetails accountData={accountData} />}/>
         <Route path='/deposit-amount' element={<DepositAmount accountData={accountData} setAccountData={setAccountData}/>}/>
         <Route path='/withdraw-amount' element={<WithdrowAmount accountData={accountData} setAccountData={setAccountData} limit={limit} minBalance={minBalance}/>}/>
+        <Route path='/settings' element={<Settings onLogout={() => setIsAuthenticated(false)}/>}></Route>
         <Route path='*' element={<h1 className='text-red-500 text-4xl text-center italic'>404 Not Found</h1>}/>
       </Routes>
     </BrowserRouter>
