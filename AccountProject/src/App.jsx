@@ -45,7 +45,7 @@ const [showSignup, setShowSignup] = useState(false);
         <Route path='/display-accounts' element={<DisplayAllAccountDetails accountData={accountData} />}/>
         <Route path='/deposit-amount' element={<DepositAmount accountData={accountData} setAccountData={setAccountData}/>}/>
         <Route path='/withdraw-amount' element={<WithdrowAmount accountData={accountData} setAccountData={setAccountData} limit={limit} minBalance={minBalance}/>}/>
-        <Route path='/settings' element={<Settings onLogout={() => setIsAuthenticated(false)}/>}></Route>
+        <Route path='/settings' element={<Settings onLogout={() => setIsAuthenticated(false)} setLimit={setLimit} setMinBalance={setMinBalance}/>}></Route>
         <Route path='*' element={<h1 className='text-red-500 text-4xl text-center italic'>404 Not Found</h1>}/>
       </Routes>
     </BrowserRouter>
