@@ -84,7 +84,7 @@ export function LoginPage() {
             banking platform designed for modern financial institutions.
             Manage customer accounts, transactions, deposits, withdrawals
             and internal banking operations efficiently with enterprise-grade
-            security powered by your Spring Boot banking backend.
+            security powered by your Spring Boot banking backend.(It is not a copy of any Real World Banking Application, It is just made for learning and demonstration purposes)
           </p>
 
           <div className="mt-6 grid grid-cols-2 gap-4">
